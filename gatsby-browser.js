@@ -13,19 +13,22 @@
 const isBrowser = typeof window !== "undefined";
 export const onRouteUpdate = ({ location, prevLocation }) => {
     if (isBrowser) {
-        _satellite.track('state',
-            {
-                xdm: {},
-                data: {
-                    _adobe_corpnew: {
-                        web: {
-                            webPageDetails: {
-                                customPageName: location
+        if(typeof _satellite !== "undefined") {
+            // eslint-disable-next-line no-undef
+            _satellite.track('state',
+                {
+                    xdm: {},
+                    data: {
+                        _adobe_corpnew: {
+                            web: {
+                                webPageDetails: {
+                                    customPageName: location
+                                }
                             }
                         }
                     }
                 }
-            }
-        );
+            );
+        }
     }
 };
