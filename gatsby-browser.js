@@ -13,8 +13,13 @@
 const isBrowser = typeof window !== "undefined";
 export const onRouteUpdate = ({ location, prevLocation }) => {
     if (isBrowser) {
+        window.alloy_all = window.alloy_all || {};
+        window.alloy_all.data = window.alloy_all.data || {};
+        window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
+        window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
+        window.alloy_all.data._adobe_corpnew.web = window.alloy_all.data._adobe_corpnew.web || {};
         window.alloy_all.data._adobe_corpnew.web.webPageDetails = window.alloy_all.data._adobe_corpnew.web.webPageDetails || {};
-        
+
         if (typeof _satellite !== "undefined") {
             console.log(`tracking page name as: ${location.href}`);
 
