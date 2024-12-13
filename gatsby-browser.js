@@ -14,6 +14,8 @@ const isBrowser = typeof window !== "undefined";
 export const onRouteUpdate = ({ location, prevLocation }) => {
     if (isBrowser) {
         if (typeof _satellite !== "undefined") {
+            console.log(`tracking page name as: ${location.href}`);
+
             // eslint-disable-next-line no-undef
             _satellite.track('state',
                 {
