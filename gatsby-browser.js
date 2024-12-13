@@ -31,6 +31,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
                     }
                 }
             );
+
+            window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
         }
     }
 };
