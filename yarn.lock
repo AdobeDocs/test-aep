@@ -33,9 +33,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/gatsby-theme-aio@npm:4.16.0-rc8":
-  version: 4.16.0-rc8
-  resolution: "@adobe/gatsby-theme-aio@npm:4.16.0-rc8"
+"@adobe/gatsby-theme-aio@npm:4.16.0-rc10":
+  version: 4.16.0-rc10
+  resolution: "@adobe/gatsby-theme-aio@npm:4.16.0-rc10"
   dependencies:
     "@adobe/focus-ring-polyfill": ^0.1.5
     "@adobe/gatsby-source-github-file-contributors": ^0.3.1
@@ -131,7 +131,7 @@ __metadata:
     gatsby: ^4.22.0
     react: ^17.0.2
     react-dom: ^17.0.2
-  checksum: 3d8d3bce1f2a2da8eb2b276995f0f11ab5e9fb13773cdc430dc66f085dc6032ea01f6f960059e318fcf8fbf21bba27126c92f48b165374aff855532f6aab930d
+  checksum: 72a7c96f228d3d1454b795a5de733e44583dc9b666761f079d63e56600fa6a15018be8812d63b6e7dbc8ff83ce3d96e57c4bfc738103990fa938fd7b5da0f43c
   languageName: node
   linkType: hard
 
@@ -3963,8 +3963,8 @@ __metadata:
   linkType: hard
 
 "@redocly/openapi-core@npm:^1.0.0-beta.104":
-  version: 1.28.3
-  resolution: "@redocly/openapi-core@npm:1.28.3"
+  version: 1.28.5
+  resolution: "@redocly/openapi-core@npm:1.28.5"
   dependencies:
     "@redocly/ajv": ^8.11.2
     "@redocly/config": ^0.20.1
@@ -3975,7 +3975,7 @@ __metadata:
     minimatch: ^5.0.1
     pluralize: ^8.0.0
     yaml-ast-parser: 0.0.43
-  checksum: 130dfdc25047ef07828142dad3b117308a018375f0b6b09e138aa2eec3c6c1375e83f786362874760c2d4fd5845e9a1685abd0facf4b31ee1183dd5d57fd7d74
+  checksum: 7d22fc6def41d4657ad05627840b4d51898731147a55b12eb1f8004ecfcce4fae25bbb5891f1c097d90ce8d000f3db64f54f6cde1711a8f460a030e82086c1af
   languageName: node
   linkType: hard
 
@@ -4590,11 +4590,11 @@ __metadata:
   linkType: hard
 
 "@types/http-proxy@npm:^1.17.7":
-  version: 1.17.15
-  resolution: "@types/http-proxy@npm:1.17.15"
+  version: 1.17.16
+  resolution: "@types/http-proxy@npm:1.17.16"
   dependencies:
     "@types/node": "*"
-  checksum: d96eaf4e22232b587b46256b89c20525c453216684481015cf50fb385b0b319b883749ccb77dee9af57d107e8440cdacd56f4234f65176d317e9777077ff5bf3
+  checksum: f5ab4afe7e3feba9d87bdddbf44e03d9a836bd2cdab679a794badbff7c4bfb6bebf46bfe22d9964eb1820e1349f2ff7807cccb20fd27cb17f03db849289e5892
   languageName: node
   linkType: hard
 
@@ -6639,9 +6639,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001688":
-  version: 1.0.30001697
-  resolution: "caniuse-lite@npm:1.0.30001697"
-  checksum: ce7bc19c5c895f255b9c9f5a11dd73c005e705145a16368f17d118848b69c3a06a58cd9c5ec338f8451122dcd532241bd5ffd6c39703c8b2dbbecf0fdc16e3b7
+  version: 1.0.30001698
+  resolution: "caniuse-lite@npm:1.0.30001698"
+  checksum: 00a9b833ce2fe1bfe6a84a4c966b7825cee5504913a12834c2cbf34d26151e106719158640b2e503842c7bba261337877ebebaac91e82fb04d8b837e22c73f26
   languageName: node
   linkType: hard
 
@@ -8220,7 +8220,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dev-site-documentation-template@workspace:."
   dependencies:
-    "@adobe/gatsby-theme-aio": 4.16.0-rc8
+    "@adobe/gatsby-theme-aio": 4.16.0-rc10
     gatsby: 4.22.0
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -8595,9 +8595,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.95
-  resolution: "electron-to-chromium@npm:1.5.95"
-  checksum: 909d90e1b8191cabd76aff884e756d35d878683e267c39e1168388fe35c7009e44ef681a163c95ed6a5968bbb08eff29e0e6ed78373cd27779ee300b3ed4fac0
+  version: 1.5.96
+  resolution: "electron-to-chromium@npm:1.5.96"
+  checksum: 18a1f4e7a55754e3423614f788077552803cee5f2026068256494192bb7655e11e5a622d2eec7483f391dc0edd4bac5878e234b9c311522198a8f732844a49d9
   languageName: node
   linkType: hard
 
@@ -16470,9 +16470,9 @@ __metadata:
   linkType: hard
 
 "possible-typed-array-names@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "possible-typed-array-names@npm:1.0.0"
-  checksum: b32d403ece71e042385cc7856385cecf1cd8e144fa74d2f1de40d1e16035dba097bc189715925e79b67bdd1472796ff168d3a90d296356c9c94d272d5b95f3ae
+  version: 1.1.0
+  resolution: "possible-typed-array-names@npm:1.1.0"
+  checksum: cfcd4f05264eee8fd184cd4897a17890561d1d473434b43ab66ad3673d9c9128981ec01e0cb1d65a52cd6b1eebfb2eae1e53e39b2e0eca86afc823ede7a4f41b
   languageName: node
   linkType: hard
 
@@ -16836,12 +16836,12 @@ __metadata:
   linkType: hard
 
 "postcss-selector-parser@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "postcss-selector-parser@npm:7.0.0"
+  version: 7.1.0
+  resolution: "postcss-selector-parser@npm:7.1.0"
   dependencies:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
-  checksum: f906b7449fcbe9fa6ae739b6fc324ee3c6201aaf5224f26da27de64ccba68d878d734dd182a467881e463f7ede08972d0129b0cc4d6b671d78c6492cddcef154
+  checksum: 1300e7871dd60a5132ee5462cc6e94edd4f3df28462b2495ca9ff025bd83768a908e892a18fde62cae63ff63524641baa6d58c64120f04fe6884b916663ce737
   languageName: node
   linkType: hard
 
