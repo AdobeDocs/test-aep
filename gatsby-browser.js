@@ -26,6 +26,29 @@ export const onClientEntry = () => {
 
 export const onInitialClientRender = () => {
     console.log('init render')
+    if (isBrowser) {
+        if (typeof _satellite !== "undefined") {
+            console.log(`tracking page name as: ${window.location.href}`);
+
+            // eslint-disable-next-line no-undef
+            _satellite.track('state',
+                {
+                    xdm: {},
+                    data: {
+                        _adobe_corpnew: {
+                            web: {
+                                webPageDetails: {
+                                    customPageName: window.location.href
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+
+            window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
+        }
+    }
 };
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
