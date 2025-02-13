@@ -11,7 +11,9 @@
  */
 
 const isBrowser = typeof window !== "undefined";
-export const onRouteUpdate = ({ location, prevLocation }) => {
+
+export const onClientEntry = () => {
+    console.log('client entry')
     if (isBrowser) {
         window.alloy_all = window.alloy_all || {};
         window.alloy_all.data = window.alloy_all.data || {};
@@ -19,7 +21,15 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
         window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
         window.alloy_all.data._adobe_corpnew.web = window.alloy_all.data._adobe_corpnew.web || {};
         window.alloy_all.data._adobe_corpnew.web.webPageDetails = window.alloy_all.data._adobe_corpnew.web.webPageDetails || {};
+    }
+};
 
+export const onInitialClientRender = () => {
+    console.log('init render')
+};
+
+export const onRouteUpdate = ({ location, prevLocation }) => {
+    if (isBrowser) {
         if (typeof _satellite !== "undefined") {
             console.log(`tracking page name as: ${location.href}`);
 
