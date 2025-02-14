@@ -28,49 +28,58 @@ export const onInitialClientRender = () => {
     console.log('init render')
     if (isBrowser) {
         if (typeof _satellite !== "undefined") {
-            console.log(`tracking page name as: ${window.location.href}`);
-
             // eslint-disable-next-line no-undef
-            _satellite.track('state',
-                {
-                    xdm: {},
-                    data: {
-                        _adobe_corpnew: {
-                            web: {
-                                webPageDetails: {
-                                    customPageName: window.location.href
-                                }
-                            }
-                        }
-                    }
-                }
-            );
+            //_satellite.track('pageload')
+            // eslint-disable-next-line no-undef
+            // _satellite.track('state',
+            //     {
+            //         xdm: {},
+            //         data: {
+            //             _adobe_corpnew: {
+            //                 web: {
+            //                     webPageDetails: {
+            //                         customPageName: window.location.href
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // );
 
-            window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
+            //window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = window.location.href;
         }
     }
 };
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
     if (isBrowser) {
+        window.addEventListener('alloy_sendEvent', function (ev) {
+            console.log('alloy')
+            console.log(ev.detail.result); // response needed for target
+            console.log(ev.detail.event);  // data and XDM values
+            console.log(ev.detail.type);  // Hit type to make sure its a pageview call
+           });
+
         if (typeof _satellite !== "undefined") {
-            console.log(`tracking page name as: ${location.href}`);
+            console.log(`route tracking page name as: ${location.href}`);
 
             // eslint-disable-next-line no-undef
-            _satellite.track('state',
-                {
-                    xdm: {},
-                    data: {
-                        _adobe_corpnew: {
-                            web: {
-                                webPageDetails: {
-                                    customPageName: location.href
-                                }
-                            }
-                        }
-                    }
-                }
-            );
+            _satellite.track('pageload')
+
+            // _satellite.track('state',
+            //     {
+            //         xdm: {},
+            //         data: {
+            //             _adobe_corpnew: {
+            //                 web: {
+            //                     webPageDetails: {
+            //                         customPageName: location.href
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // );
 
             window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
         }
