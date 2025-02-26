@@ -66,7 +66,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 
             // eslint-disable-next-line no-undef
             //_satellite.track('pageload')
-
+            
+            // eslint-disable-next-line no-undef
             _satellite.track('state',
                 {
                     xdm: {},
