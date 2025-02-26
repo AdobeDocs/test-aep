@@ -58,30 +58,31 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
             console.log(ev.detail.result); // response needed for target
             console.log(ev.detail.event);  // data and XDM values
             console.log(ev.detail.type);  // Hit type to make sure its a pageview call
-           });
+
+        });
 
         if (typeof _satellite !== "undefined") {
             console.log(`route tracking page name as: ${location.href}`);
 
             // eslint-disable-next-line no-undef
-            _satellite.track('pageload')
+            //_satellite.track('pageload')
 
-            // _satellite.track('state',
-            //     {
-            //         xdm: {},
-            //         data: {
-            //             _adobe_corpnew: {
-            //                 web: {
-            //                     webPageDetails: {
-            //                         customPageName: location.href
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // );
+            _satellite.track('state',
+                {
+                    xdm: {},
+                    data: {
+                        _adobe_corpnew: {
+                            web: {
+                                webPageDetails: {
+                                    customPageName: location.href
+                                }
+                            }
+                        }
+                    }
+                }
+            );
 
-            window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
+            //window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
         }
     }
 };
