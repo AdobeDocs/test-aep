@@ -13,77 +13,41 @@
 const isBrowser = typeof window !== "undefined";
 
 export const onClientEntry = () => {
-    console.log('client entry')
-    if (isBrowser) {
-        window.alloy_all = window.alloy_all || {};
-        window.alloy_all.data = window.alloy_all.data || {};
-        window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
-        window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
-        window.alloy_all.data._adobe_corpnew.web = window.alloy_all.data._adobe_corpnew.web || {};
-        window.alloy_all.data._adobe_corpnew.web.webPageDetails = window.alloy_all.data._adobe_corpnew.web.webPageDetails || {};
-    }
-};
-
-export const onInitialClientRender = () => {
-    console.log('init render')
-    if (isBrowser) {
-        if (typeof _satellite !== "undefined") {
-            // eslint-disable-next-line no-undef
-            //_satellite.track('pageload')
-            // eslint-disable-next-line no-undef
-            // _satellite.track('state',
-            //     {
-            //         xdm: {},
-            //         data: {
-            //             _adobe_corpnew: {
-            //                 web: {
-            //                     webPageDetails: {
-            //                         customPageName: window.location.href
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // );
-
-            //window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = window.location.href;
-        }
-    }
+  if (isBrowser) {
+    window.alloy_all = window.alloy_all || {};
+    window.alloy_all.data = window.alloy_all.data || {};
+    window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
+    window.alloy_all.data._adobe_corpnew = window.alloy_all.data._adobe_corpnew || {};
+    window.alloy_all.data._adobe_corpnew.web = window.alloy_all.data._adobe_corpnew.web || {};
+    window.alloy_all.data._adobe_corpnew.web.webPageDetails = window.alloy_all.data._adobe_corpnew.web.webPageDetails || {};
+  }
 };
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-    if (isBrowser) {
-        window.addEventListener('alloy_sendEvent', function (ev) {
-            console.log('alloy')
-            console.log(ev.detail.result); // response needed for target
-            console.log(ev.detail.event);  // data and XDM values
-            console.log(ev.detail.type);  // Hit type to make sure its a pageview call
-
-        });
-
-        if (typeof _satellite !== "undefined") {
-            console.log(`route tracking page name as: ${location.href}`);
-
-            // eslint-disable-next-line no-undef
-            //_satellite.track('pageload')
-            
-            // eslint-disable-next-line no-undef
-            _satellite.track('state',
-                {
-                    xdm: {},
-                    data: {
-                        _adobe_corpnew: {
-                            web: {
-                                webPageDetails: {
-                                    customPageName: location.href
-                                }
-                            }
-                        }
-                    }
+  if (isBrowser) {
+    function watchVariable() {
+      // eslint-disable-next-line no-undef
+      if (typeof window._satellite !== 'undefined') {
+        // eslint-disable-next-line no-undef
+        _satellite.track('state',
+          {
+            xdm: {},
+            data: {
+              _adobe_corpnew: {
+                web: {
+                  webPageDetails: {
+                    customPageName: location.href
+                  }
                 }
-            );
+              }
+            }
+          }
+        );
 
-            //window.alloy_all.data._adobe_corpnew.web.webPageDetails.customPageName = location.href;
-        }
+        clearInterval(intervalId);
+      }
     }
+
+    const intervalId = setInterval(watchVariable, 1000); 
+  }
 };
