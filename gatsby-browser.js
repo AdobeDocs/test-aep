@@ -25,6 +25,12 @@ export const onClientEntry = () => {
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
   if (isBrowser) {
+    document
+    .querySelectorAll("a")
+    .forEach(link => {
+      link.setAttribute("daa-ll", link.textContent.trim());
+    });
+
     function watchVariable() {
       // eslint-disable-next-line no-undef
       if (typeof window._satellite !== 'undefined') {
